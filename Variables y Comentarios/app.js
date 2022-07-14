@@ -28,3 +28,15 @@ console.log({c})
 //Dar estilos css desde Javascript
 console.log('%c Mi texto','color:salmon; font-weight:bold')
 
+let h='Hola',
+    i='Emill',
+    j=4;
+
+console.table({h,i,j});
+
+let myfirstobj = {
+    name: 'object',
+    size: 2
+}
+console.log(myfirstobj)
+console.log(h+i)

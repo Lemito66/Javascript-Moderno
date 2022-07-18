@@ -1,3 +1,4 @@
+//alert("Hola desde App.js");
 // Comentario una linea
 /* Comentario varias lineas */
 let a =10;

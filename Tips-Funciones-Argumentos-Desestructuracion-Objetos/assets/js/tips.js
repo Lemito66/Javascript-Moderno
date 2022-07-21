@@ -4,10 +4,10 @@
         apellido,
     }
 }
- */
+*/
 
 //Funcion flecha
-const crearPersona = (nombre,apellido) => ({nombre,apellido})
+const crearPersona = (nombre,apellido) => ({nombre,apellido});
 const persona=crearPersona('Emill','Logroño');
 console.log(persona);
 

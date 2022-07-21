@@ -24,3 +24,20 @@ const imprimeArgumentos2 = (palabra,...args) =>{ //Solo permite un argumento y l
 }
 imprimeArgumentos2('hola','pepe',25,85.5);
 //{ palabra: 'hola', args: [ 'pepe', 25, 85.5 ] }
+
+
+const sumar = (a,b)=> a+b;
+const restar = (a,b) =>{
+    return a-b;
+};
+console.log(sumar(5,5));
+
+const tablaMultiplicar = (numero, hasta)=>{
+    for (let i = 0; i <= hasta; i++) {
+        let multiplicacion=numero*i
+        let resultado=(numero , '*' , i , '=', multiplicacion);
+        return resultado        
+    }
+};
+
+tablaMultiplicar(7,10);

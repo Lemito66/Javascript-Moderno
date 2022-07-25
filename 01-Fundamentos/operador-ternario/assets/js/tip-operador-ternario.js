@@ -1,4 +1,4 @@
-const elMayor = (a,b)=> (a>b) ? a : b;;
+const elMayor = (a,b)=> (a>b) ? a : b;
 const elMenor = (a,b)=> (a<b) ? a : b;
 const esMiembro = (miembro) => (miembro) ? '2 Dólares' : '10 Dólares'
 console.log(elMayor(20,15));

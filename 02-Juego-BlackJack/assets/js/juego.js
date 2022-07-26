@@ -12,7 +12,9 @@ let puntosJugador = 0,
   puntosComputadora = 0;
 //Referencias del html
 const btnPedirCarta = document.querySelector("#btnPedirCarta");
+const btnDetener = document.querySelector("#btnDetener");
 const divJugadorCartas = document.querySelector("#jugador-cartas");
+const divComputadoraCartas = document.querySelector("#computador-cartas");
 const puntoHtml = document.querySelectorAll("small");
 
 //Esta funcion crea una baraja
@@ -52,6 +54,35 @@ const valorCarta = (carta) => {
   return puntos;
 };
 
+//Turno de la computadora
+const turnoComputadora = (puntosMinimos) => {
+  do {
+    const carta = pedirCarta(); //pedimos la carta
+    puntosComputadora += valorCarta(carta); //sumamos los puntos
+    puntoHtml[1].innerText = puntosComputadora; //Hacemos que se muestre en pantalla los puntos
+
+    // <img class="carta" src="assets/cartas/10S.png">
+    const imagenCarta = document.createElement("img"); //Creamos un elemento de tipo imagen
+    imagenCarta.src = `assets/cartas/${carta}.png`; //Ponemos la dirección de donde se encuentra las imagenes de la carta
+    imagenCarta.classList.add("carta"); //Creamos los estilo
+    divComputadoraCartas.append(imagenCarta); // Añadimos los estilos
+    if (puntosMinimos > 21) {
+      break;
+    }
+  } while (puntosComputadora < puntosMinimos && puntosMinimos <= 21);
+  setTimeout(() => {
+    if (puntosComputadora === puntosMinimos) {
+      alert("Empate");
+    } else if (puntosMinimos > 21) {
+      alert("Computadora gana");
+    } else if (puntosComputadora > 21) {
+      alert("Jugador  gana");
+    } else {
+      alert("Computadora  gana");
+    }
+  }, 20);
+};
+
 //Eventos
 btnPedirCarta.addEventListener("click", () => {
   const carta = pedirCarta(); //pedimos la carta
@@ -67,8 +98,18 @@ btnPedirCarta.addEventListener("click", () => {
   if (puntosJugador > 21) {
     console.warn("Lo siento mucho, perdiste");
     btnPedirCarta.disabled = true; // Desactivamos el boton cuando el jugador llegue a más de 21 puntos
+    btnDetener.disabled = true;
+    //turnoComputadora(puntosJugador);
   } else if (puntosJugador === 21) {
     console.warn("21, genial!");
     btnPedirCarta.disabled = true; // Desactivamos el boton cuando el jugador llegue a 21
+    btnDetener.disabled = true;
+    //turnoComputadora(puntosJugador);
   }
+});
+
+btnDetener.addEventListener("click", () => {
+  btnDetener.disabled = true;
+  btnPedirCarta.disabled = true;
+  turnoComputadora(puntosJugador);
 });

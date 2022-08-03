@@ -42,3 +42,26 @@ npm install --save-dev css-loader style-loader
 
 ## Imagenes
 [Imagenes](https://v4.webpack.js.org/loaders/file-loader/)
+```
+npm install file-loader --save-dev
+```
+## CopyWebpackPlugin
+[CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/#root)
+```
+npm install copy-webpack-plugin --save-dev
+```
+Para producción
+```
+npm i -D css-minimizer-webpack-plugin terser-webpack-plugin
+```
+## Babel
+1. Página Oficial
+```
+https://babeljs.io/setup#installation
+```
+2. Luego instalamos 
+```
+npm install --save-dev babel-loader @babel/core
+npm install @babel/preset-env --save-dev
+```
+

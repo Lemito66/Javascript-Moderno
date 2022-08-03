@@ -1,4 +1,4 @@
-import '../css/componentes.css';
+//import '../css/componentes.css';
 export const saludar = (nombre) => { // Export es para exportar la función y luego importar
     console.log('Creando etiqueta h1');
     const h1 = document.createElement('h1');

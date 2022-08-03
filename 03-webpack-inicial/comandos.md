@@ -22,7 +22,9 @@ npm install webpack webpack-cli --save-dev
 
 ## Dev Server
 [Dev-Server](https://webpack.js.org/configuration/dev-server/)
-```npm i -D webpack-dev-server```
+```
+npm i -D webpack-dev-server
+```
 
 ## Style-loader 
 
@@ -31,7 +33,9 @@ npm install webpack webpack-cli --save-dev
 ## Css loader
 [Css-Loader](https://webpack.js.org/loaders/css-loader/)
 
-```npm install --save-dev css-loader style-loader```
+```
+npm install --save-dev css-loader style-loader
+```
 ## MiniCssExtractPlugin
 [MiniCssExtractPlugin](https://webpack.js.org/plugins/mini-css-extract-plugin/
 )

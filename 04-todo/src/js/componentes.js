@@ -45,6 +45,8 @@ divTodoList.addEventListener('click',( event ) =>{
         todoList.marcaCompletado(todoId);
         todoElemento.classList.toggle('completed');//Agregar a la clase completado
         
+    }else if (nombreElemento.includes('button')) { // hay que borrar el todo
+        todoList.eliminarTodo( todoId );
+        divTodoList.removeChild( todoElemento );
     }
-    console.log(todoList);
 });

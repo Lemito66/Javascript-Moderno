@@ -35,3 +35,16 @@ txtInput.addEventListener('keyup',(event)=>{
         txtInput.value = '';
     }
 });
+
+divTodoList.addEventListener('click',( event ) =>{
+    const nombreElemento = event.target.localName; //Input, label, button
+    const todoElemento = event.target.parentElement.parentElement;//Tener la referencia completa del html cuando le doy click
+    const todoId = todoElemento.getAttribute('data-id');//Para obtener el elemento
+
+    if (nombreElemento.includes('input')) {//Esto indica que ha hecho clic en el chcek
+        todoList.marcaCompletado(todoId);
+        todoElemento.classList.toggle('completed');//Agregar a la clase completado
+        
+    }
+    console.log(todoList);
+});

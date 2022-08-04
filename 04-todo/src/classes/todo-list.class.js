@@ -9,7 +9,14 @@ export class TodoList{
         
     }
     marcaCompletado(id){
-        
+        for (const todo of this.todos) {
+            
+            if (todo.id == id) {
+
+                todo.completado = !todo.completado;
+                break;
+            }
+        }
 
     }
     eliminarCompletados(){

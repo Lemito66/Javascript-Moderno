@@ -2,8 +2,10 @@ import { todoList } from "../index";
 import { Todo } from "../classes";
 
 //Referencias en el Html
+//Esto es para referenciar a las clases de los estilos
 const divTodoList = document.querySelector('.todo-list')
 const txtInput = document.querySelector('.new-todo');
+const btnBorrar = document.querySelector('.clear-completed');
 
 export const crearTodoHtml = (todo) => {
     const htmlTodo = `
@@ -27,7 +29,6 @@ export const crearTodoHtml = (todo) => {
 txtInput.addEventListener('keyup',(event)=>{
     
     if ( event.keyCode === 13 && txtInput.value.length > 0 ) {
-        console.log( txtInput.value );
         const nuevoTodo = new Todo( txtInput.value );
         todoList.nuevoTodo( nuevoTodo );
 
@@ -48,5 +49,18 @@ divTodoList.addEventListener('click',( event ) =>{
     }else if (nombreElemento.includes('button')) { // hay que borrar el todo
         todoList.eliminarTodo( todoId );
         divTodoList.removeChild( todoElemento );
+    }
+});
+
+btnBorrar.addEventListener('click',() =>{
+    todoList.eliminarCompletados();
+
+    for (let i = divTodoList.children.length-1; i >= 0; i--) {
+        const elemento = divTodoList.children[i];
+
+        if (elemento.classList.contains('completed')) {
+            divTodoList.removeChild(elemento);
+        }
+        
     }
 });

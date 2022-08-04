@@ -6,7 +6,7 @@ export class TodoList{
         this.todos.push(todo);
     }
     eliminarTodo(id){
-        this.todos = this.todos.filter( todo => todo.id != id )// Vamos hacer una copia del arreglo de los que sean diferenctes al id
+        this.todos = this.todos.filter( todo => todo.id != id )// Vamos hacer una copia del arreglo excluyendo a los de la condición 
     }
     marcaCompletado(id){
         for (const todo of this.todos) {
@@ -20,6 +20,7 @@ export class TodoList{
 
     }
     eliminarCompletados(){
-        
+        this.todos = this.todos.filter( todo => !todo.completado )// Me devuelve un arreglo de todos los todos que no esten completados
+
     }
 }

@@ -4,10 +4,13 @@ import './styles.css';
 import { TodoList } from './classes/todo-list.class'; */
 
 import {Todo,TodoList} from './classes';//Aqui se importa todo del archivo index.js que esta en la carpeta classes
+import { crearTodoHtml } from './js/componentes';
 
-const todoList = new TodoList();
+ export const todoList = new TodoList();
 
-const tarea = new Todo('Aprender Javascript');
+const tarea = new Todo('Aprender Javascript!!');
 
 todoList.nuevoTodo(tarea);
+
 console.log(todoList);
+crearTodoHtml( tarea );

@@ -9,6 +9,7 @@ export class TodoList{
         
     }
     marcaCompletado(id){
+        
 
     }
     eliminarCompletados(){

@@ -31,7 +31,7 @@ buscarHeroe(heroeId1, (err, heroe1) => {
 });
  */
 
-Promise.all([ buscarHeroe(heroeId1), buscarHeroe(heroeId2)])
+Promise.all([ buscarHeroe(heroeId1), buscarHeroe(heroeId2)])//promise.all pide un arreglo de objetos
     .then( ([heroes1,heroes2]) => {
     
     console.log(`Enviando a ${heroes1.nombre} y ${heroes2.nombre} a la misión`);

@@ -5,6 +5,8 @@ import {
 
 
 const heroresIds = ['capi', 'iron', 'spyder'];
+const heroesPromesas = heroresIds.map(buscarHeroe); //Es lo mismo que lo de abajo
+// const heroesPromesas = heroresIds.map(id => buscarHeroe(id));
 
 export const obtenerHeroresArr = async () => { // Se debe poner el async sino el await no funciona
 
@@ -32,6 +34,25 @@ export const obtenerHeroesAwait = async (id) => {
 
 }
 
+export const heroesCiclo = async() => {
+    console.time('HeroesCiclo');
+
+    for await(const heroe of heroesPromesas) {
+        console.log(heroe);
+    }
+
+    console.timeEnd('HeroesCiclo');
+    /* const heroes = await Promise.all(heroesPromesas);
+    heroes.forEach(heroe => console.log(heroe)); */
+}
+
+export const heroeIfAwait = async(id) => {
+    if  ( (await buscarHeroeAsync(id)).nombre === 'Ironman'){
+        console.log('El mejor de todos');
+    }else{
+        console.log('Naa');
+    }
+}
 
 // Esto en el index
 /* import { obtenerHeroesAwait, obtenerHeroresArr } from "./js/await";

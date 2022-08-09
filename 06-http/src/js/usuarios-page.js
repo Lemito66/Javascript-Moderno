@@ -1,3 +1,6 @@
+//URL
+// https://reqres.in/
+
 import { obtenerUsuario } from "./http-provider";
 
 const body = document.body;
@@ -78,3 +81,7 @@ export const init = async () => {
     const usuarios = await obtenerUsuario();
     usuarios.forEach(crearFilaUsuario);
 }
+
+//Esto en el index.js
+/* import { init } from "./js/usuarios-page";
+init(); */

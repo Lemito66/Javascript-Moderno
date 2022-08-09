@@ -1,6 +1,6 @@
-# Webpack Starter
+# Http
 
-Este es el proyecto inicial para crear aplicaciones utilizando webpack.
+Este es el proyecto para Http
 
 ### Notas:
 Recuerden reconstruir los módulos de Node
